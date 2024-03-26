@@ -11,15 +11,26 @@ function renderLicenseBadge(license) {
       "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)",
     None: "",
   };
+  return badges[license];
 }
-
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  const licenseText = {
+    MIT: "This project is licensed under the MIT License.",
+    "Apache 2.0": "This project is licensed under the Apache 2.0 License.",
+    "GPL 3.0":
+      "This project is licensed under the GNU General Public License v3.0.",
+    "BSD 3-Clause": "This project is licensed under the BSD 3-Clause License.",
+    None: "This project is not licensed.",
+  };
+
+  return licenseText[license];
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
