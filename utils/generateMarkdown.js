@@ -49,14 +49,16 @@ function generateMarkdown(data) {
     description,
     installation,
     usage,
-    contributing,
-    tests,
+    screenshots,
+    live,
+    credits,
     license,
     github,
     email,
   } = data;
-  return `# ${title}
-  console.log(title);
+  return `
+  
+  # ${title}
 
   ${renderLicenseBadge(license)}
 
