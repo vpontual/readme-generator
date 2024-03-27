@@ -4,11 +4,22 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // Function to ensure the user does not leave an invalid (blank or too short) entry on required fields
-function validateLength() {
+function validateLength(input) {
   if (input.length < 3) {
     return "Input must be at least 3 characters long.";
   }
   return true;
+}
+
+// Function to ensure the user inputs an email in the proper format
+function validateEmail(input) {
+  // Simple regex for basic email validation
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (regex.test(input)) {
+    return true;
+  } else {
+    return "Please enter a valid email address.";
+  }
 }
 
 // Array of questions for user input
