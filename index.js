@@ -59,6 +59,7 @@ const questions = [
       type: "input",
       name: "screenshots",
       message: "Please enter the link for the screenshot:",
+      validate: validateLength,
     },
   },
   {
@@ -73,6 +74,7 @@ const questions = [
       type: "input",
       name: "live",
       message: "Please enter the link for the website:",
+      validate: validateLength,
     },
   },
   {
@@ -86,6 +88,7 @@ const questions = [
       type: "input",
       name: "credits",
       message: "Please list them:",
+      validate: validateLength,
     },
   },
   {
@@ -100,6 +103,7 @@ const questions = [
       type: "input",
       name: "tests",
       message: "Please list them:",
+      validate: validateLength,
     },
   },
   {
@@ -112,6 +116,7 @@ const questions = [
     type: "input",
     name: "github",
     message: "Enter your GitHub username:",
+    validate: validateLength,
   },
   {
     type: "input",

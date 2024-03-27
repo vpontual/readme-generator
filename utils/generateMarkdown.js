@@ -101,7 +101,8 @@ function generateMarkdown(data) {
   }
   if (github || email) {
     sections.push(
-      `## Questions\nFor any additional questions, feel free to reach out to me at ${email}. You can also check out my GitHub profile: [${github}](https://github.com/${github})`
+      `## Questions\nFor any additional questions, feel free to reach out to me at ${email}.\n 
+      You can also check out my GitHub profile: [${github}](https://github.com/${github})`
     );
   }
 
