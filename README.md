@@ -23,7 +23,7 @@ Clone the repo, install NODE.JS, install inquirer through NPM, run Node Index
 This app can be used to create any README as needed for any project. Feel free to modify to fit custom needs.
 
 ## Video
-./assets/readme-generator.mov
+![Node App Walkthrough](./assets/readme-generator.mov)
 
 ## Credits
 vitorpontual
