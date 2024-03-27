@@ -25,22 +25,45 @@ const questions = [
     message: "Provide usage information for your project:",
   },
   {
-    type: "input",
-    name: "screenshots",
-    message:
-      "Please provide the link to the screenshot of the application, if applicable:",
+    confirm: {
+      type: "confirm",
+      name: "askAboutScreenshot",
+      message:
+        "Would you like to provide a link to a screenshot of the application?",
+      default: false,
+    },
+    question: {
+      type: "input",
+      name: "screenshots",
+      message: "Please enter the link for the screenshot:",
+    },
   },
   {
-    type: "input",
-    name: "live",
-    message:
-      "Please provide the link to the live website of the application, if applicable:",
+    confirm: {
+      type: "confirm",
+      name: "askAboutLive",
+      message:
+        "Would you like to provide a link to the live website of the application?",
+      default: false,
+    },
+    question: {
+      type: "input",
+      name: "live",
+      message: "Please enter the link for the website:",
+    },
   },
   {
-    type: "input",
-    name: "credits",
-    message:
-      "Please list all contributors that helps on this project, if applicable:",
+    confirm: {
+      type: "confirm",
+      name: "askAboutCredits",
+      message: "Did you work with any collaborators on this project?",
+      default: false,
+    },
+    question: {
+      type: "input",
+      name: "credits",
+      message: "Please list them:",
+    },
   },
   {
     type: "list",
