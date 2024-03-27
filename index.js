@@ -90,7 +90,7 @@ function writeToFile(fileName, data) {
   );
 }
 
-Function to add the logic to the optional questions
+//Function to add the logic to the optional questions
 async function askQuestions(questions) {
   let results = {};
 
