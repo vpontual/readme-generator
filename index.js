@@ -13,7 +13,6 @@ function validateLength(input) {
 
 // Function to ensure the user inputs an email in the proper format
 function validateEmail(input) {
-  // Simple regex for basic email validation
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (regex.test(input)) {
     return true;
@@ -28,21 +27,25 @@ const questions = [
     type: "input",
     name: "title",
     message: "What is the title of this project?",
+    validate: validateLength,
   },
   {
     type: "input",
     name: "description",
     message: "Please describe this project:",
+    validate: validateLength,
   },
   {
     type: "input",
     name: "installation",
     message: "Provide installation instructions for your project:",
+    validate: validateLength,
   },
   {
     type: "input",
     name: "usage",
     message: "Provide usage information for your project:",
+    validate: validateLength,
   },
   {
     confirm: {
@@ -114,6 +117,7 @@ const questions = [
     type: "input",
     name: "email",
     message: "Enter your contact email address:",
+    validate: validateEmail,
   },
 ];
 
