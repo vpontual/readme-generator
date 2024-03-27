@@ -49,6 +49,7 @@ function generateMarkdown(data) {
     screenshots,
     live,
     credits,
+    tests,
     license,
     github,
     email,
@@ -92,6 +93,10 @@ function generateMarkdown(data) {
   ## Credits
 
   ${credits}
+
+  ## Tests
+
+  ${tests}
 
   ## License
 
