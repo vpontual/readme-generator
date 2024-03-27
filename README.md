@@ -1,12 +1,12 @@
 
   
-  # Test Project
+  # title
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
   
-  This project will test the CLI appplication that takes in various user inputs and creates a professional README.md file  that can be used for any future projects.
+  test
   
   ## Table of Contents
   
@@ -20,23 +20,23 @@
   
   ## Installation
 
-  1 - Install NodeJS 2 - Install dependencies with NPM 3- Run Index with Node
+  none
 
   ## Usage
 
-  By running Node Index the CLI application will run and ask all required questions to build the README.
+  look
 
   ## Screenshots
 
-  N/A
+  undefined
 
   ## Live Link
 
-  N/A
+  undefined
 
   ## Credits
 
-  N/A
+  vp
 
   ## License
 
@@ -46,5 +46,5 @@
 
   ## Questions
 
-  For any additional questions, feel free to reach out to me at veepee@duck.com. You can also check out my GitHub profile: [vpontual](https://github.com/vpontual)
+  For any additional questions, feel free to reach out to me at look@me. You can also check out my GitHub profile: [vip](https://github.com/vip)
   

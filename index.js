@@ -90,10 +90,42 @@ function writeToFile(fileName, data) {
   );
 }
 
+Function to add the logic to the optional questions
+async function askQuestions(questions) {
+  let results = {};
+
+  for (const item of questions) {
+    // Determine if the question is option by verifying if it has 'confirm' property
+    if (item.confirm) {
+      // It is an optional question, first ask the confirm question
+      const confirm = await inquirer.prompt(item.confirm);
+      // If confirmed, then ask the actual question
+      if (confirm[item.confirm.name]) {
+        const answer = await inquirer.prompt(item.question);
+        results = { ...results, ...answer };
+      }
+    } else {
+      // The question is not optional, ask it directly
+      const answer = await inquirer.prompt(item);
+      results = { ...results, ...answer };
+    }
+  }
+
+  return results;
+}
+
 // TODO: Create a function to initialize app
+// function init() {
+//   inquirer.prompt(questions).then((answers) => {
+//     const markdown = generateMarkdown(answers);
+//     writeToFile("README.md", markdown);
+//   });
+// }
+
 function init() {
-  inquirer.prompt(questions).then((answers) => {
+  askQuestions(questions).then((answers) => {
     const markdown = generateMarkdown(answers);
+    //console.log(answers);
     writeToFile("README.md", markdown);
   });
 }
