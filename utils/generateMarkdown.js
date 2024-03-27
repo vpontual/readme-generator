@@ -12,6 +12,7 @@ function renderLicenseBadge(license) {
   };
   return badges[license];
 }
+
 // Function that returns the license link. If there is no license, return an empty string.
 function renderLicenseLink(license) {
   const licenseLinks = {

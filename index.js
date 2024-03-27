@@ -153,17 +153,13 @@ async function askQuestions(questions) {
   let results = {};
 
   for (const item of questions) {
-    // Determine if the question is option by verifying if it has 'confirm' property
     if (item.confirm) {
-      // It is an optional question, first ask the confirm question
       const confirm = await inquirer.prompt(item.confirm);
-      // If confirmed, then ask the actual question
       if (confirm[item.confirm.name]) {
         const answer = await inquirer.prompt(item.question);
         results = { ...results, ...answer };
       }
     } else {
-      // The question is not optional, ask it directly
       const answer = await inquirer.prompt(item);
       results = { ...results, ...answer };
     }
@@ -176,7 +172,6 @@ async function askQuestions(questions) {
 function init() {
   askQuestions(questions).then((answers) => {
     const markdown = generateMarkdown(answers);
-    //console.log(answers);
     writeToFile("README.md", markdown);
   });
 }
