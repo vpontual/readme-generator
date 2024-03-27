@@ -65,6 +65,21 @@ const questions = [
   {
     confirm: {
       type: "confirm",
+      name: "askAboutVideo",
+      message:
+        "Would you like to provide a link to a video walkthrough of the application?",
+      default: false,
+    },
+    question: {
+      type: "input",
+      name: "video",
+      message: "Please enter the link for the video:",
+      validate: validateLength,
+    },
+  },
+  {
+    confirm: {
+      type: "confirm",
       name: "askAboutLive",
       message:
         "Would you like to provide a link to the live website of the application?",

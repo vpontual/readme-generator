@@ -47,6 +47,7 @@ function generateMarkdown(data) {
     installation,
     usage,
     screenshots,
+    video,
     live,
     credits,
     tests,
@@ -65,6 +66,7 @@ function generateMarkdown(data) {
   sections.push(`- [Installation](#installation)\n`);
   sections.push(`- [Usage](#usage)\n`);
   if (screenshots) sections.push(`- [Screenshots](#screenshots)\n`);
+  if (video) sections.push(`- [Video](#video)\n`);
   if (live) sections.push(`- [Live Link](#live)\n`);
   if (credits) sections.push(`- [Credits](#credits)\n`);
   if (tests) sections.push(`- [Tests](#tests)\n`);
@@ -80,6 +82,9 @@ function generateMarkdown(data) {
   }
   if (screenshots) {
     sections.push(`## Screenshots\n${screenshots}\n\n`);
+  }
+  if (video) {
+    sections.push(`## Video\n${video}\n\n`);
   }
   if (live) {
     sections.push(`## Live Link\n${live}\n\n`);
