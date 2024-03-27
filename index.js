@@ -67,6 +67,20 @@ const questions = [
     },
   },
   {
+    confirm: {
+      type: "confirm",
+      name: "askAboutTests",
+      message:
+        "Are there any specific tests to ensure the code is working properly?",
+      default: false,
+    },
+    question: {
+      type: "input",
+      name: "tests",
+      message: "Please list them:",
+    },
+  },
+  {
     type: "list",
     name: "license",
     message: "Choose a license for your project:",
