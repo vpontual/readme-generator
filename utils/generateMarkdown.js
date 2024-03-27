@@ -62,7 +62,6 @@ function generateMarkdown(data) {
   sections.push(`## Description\n\n${description}\n\n`);
 
   sections.push(`## Table of Contents\n\n`);
-
   sections.push(`- [Installation](#installation)\n`);
   sections.push(`- [Usage](#usage)\n`);
   if (screenshots) sections.push(`- [Screenshots](#screenshots)\n`);
@@ -92,11 +91,13 @@ function generateMarkdown(data) {
     sections.push(`## Tests\n${tests}\n\n`);
   }
   if (license) {
-    sections.push(
-      `## License\n[${renderLicenseSection(license)}](${renderLicenseLink(
-        license
-      )})\n\n`
-    );
+    license === "None"
+      ? sections.push(`## License\n${renderLicenseSection(license)}\n\n`)
+      : sections.push(
+          `## License\n[${renderLicenseSection(license)}](${renderLicenseLink(
+            license
+          )})\n\n`
+        );
   }
   if (github || email) {
     sections.push(
