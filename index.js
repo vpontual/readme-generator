@@ -3,6 +3,14 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
+// Function to ensure the user does not leave an invalid (blank or too short) entry on required fields
+function validateLength() {
+  if (input.length < 3) {
+    return "Input must be at least 3 characters long.";
+  }
+  return true;
+}
+
 // Array of questions for user input
 const questions = [
   {
