@@ -54,60 +54,57 @@ function generateMarkdown(data) {
     github,
     email,
   } = data;
-  return `
-  
-  # ${title}
 
-  ${renderLicenseBadge(license)}
+  let sections = [];
 
-  ## Description
-  
-  ${description}
-  
-  ## Table of Contents
-  
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Screenshots](#screenshots)
-  - [Live Link](#live)
-  - [Credits](#credits)
-  - [License](#license)
-  - [Questions](#questions)
-  
-  ## Installation
+  sections.push(`# ${title}\n\n`);
+  sections.push(`${renderLicenseBadge(license)}\n\n`);
+  sections.push(`## Description\n\n${description}\n\n`);
 
-  ${installation}
+  sections.push(`## Table of Contents\n\n`);
 
-  ## Usage
+  sections.push(`- [Installation](#installation)\n`);
+  sections.push(`- [Usage](#usage)\n`);
+  if (screenshots) sections.push(`- [Screenshots](#screenshots)\n`);
+  if (live) sections.push(`- [Live Link](#live)\n`);
+  if (credits) sections.push(`- [Credits](#credits)\n`);
+  if (tests) sections.push(`- [Tests](#tests)\n`);
+  sections.push(`- [License](#license)\n`);
+  sections.push(`- [Questions](#questions)\n`);
+  sections.push("\n");
 
-  ${usage}
+  if (installation) {
+    sections.push(`## Installation\n${installation}\n\n`);
+  }
+  if (usage) {
+    sections.push(`## Usage\n${usage}\n\n`);
+  }
+  if (screenshots) {
+    sections.push(`## Screenshots\n${screenshots}\n\n`);
+  }
+  if (live) {
+    sections.push(`## Live Link\n${live}\n\n`);
+  }
+  if (credits) {
+    sections.push(`## Credits\n${credits}\n\n`);
+  }
+  if (tests) {
+    sections.push(`## Tests\n${tests}\n\n`);
+  }
+  if (license) {
+    sections.push(
+      `## License\n[${renderLicenseSection(license)}](${renderLicenseLink(
+        license
+      )})\n\n`
+    );
+  }
+  if (github || email) {
+    sections.push(
+      `## Questions\nFor any additional questions, feel free to reach out to me at ${email}. You can also check out my GitHub profile: [${github}](https://github.com/${github})`
+    );
+  }
 
-  ## Screenshots
-
-  ${screenshots}
-
-  ## Live Link
-
-  ${live}
-
-  ## Credits
-
-  ${credits}
-
-  ## Tests
-
-  ${tests}
-
-  ## License
-
-  ${renderLicenseSection(license)}
-
-  ${license !== "None" ? `[License Link](${renderLicenseLink(license)})` : ""}
-
-  ## Questions
-
-  For any additional questions, feel free to reach out to me at ${email}. You can also check out my GitHub profile: [${github}](https://github.com/${github})
-  `;
+  return sections.join("");
 }
 
 module.exports = generateMarkdown;
