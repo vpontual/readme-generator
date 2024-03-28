@@ -26,7 +26,7 @@ This app can be used to create any README as needed for any project. Feel free t
 
 ## Video
 
-![Node App Walkthrough](./assets/readme-generator.mp4)
+./assets/readme-generator.mov
 
 ## Credits
 
